@@ -1,4 +1,21 @@
+import { error, success } from "consola";
+import express from "express";
+import colors from "colors";
+
 /**
- * Return message
+ * Initialize the Express Application
  */
-console.log("Hello world");
+const app = express();
+
+const PORT = 4850;
+
+const startServerApp = () => {
+  app.listen(PORT, () =>
+    success({
+      badge: true,
+      message: `Server started on PORT: ${PORT}`.green.bold,
+    })
+  );
+};
+
+startServerApp();
