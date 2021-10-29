@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "server": "node -r esm",
-    "dev": "nodemon -r esm"
+    "dev": "nodemon -r esm",
+    "prepare": "husky install"
   },
   "dependencies": {
     "apollo-server-express": "^3.3.0",
@@ -23,6 +24,16 @@
     "yup": "^0.32.9"
   },
   "devDependencies": {
-    "nodemon": "^2.0.14"
+    "eslint": "7.32.0",
+    "git-precommit-checks": "^3.0.6",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.2.6",
+    "nodemon": "^2.0.14",
+    "prettier": "^2.4.1"
+  },
+  "lint-staged": {
+    "**/*.{js,gql,ts,json}": [
+      "yarn prettier --write"
+    ]
   }
 }

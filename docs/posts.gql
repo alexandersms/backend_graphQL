@@ -1,0 +1,22 @@
+query HELLO {
+  getAllPosts {
+    title
+    content
+    createdAt
+    updatedAt
+  }
+}
+
+mutation CREATE_NEW_POST(
+  $title: String!
+  $content: String!
+  $featuredImage: String
+) {
+  createNewPost(
+    newPost: { title: $title, content: $content, featuredImage: $featuredImage }
+  ) {
+    title
+    content
+    featuredImage
+  }
+}
